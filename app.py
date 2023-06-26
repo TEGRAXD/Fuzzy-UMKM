@@ -19,42 +19,18 @@ def predict():
     '''
     d1, d2, d3, d4, d5, q3, q4, q10, q11, q12 = [x for x in request.form.values()]
 
-    # print(type(harga))
-
-    # data = []
     loaded_model.input['harga'] = (100 / 7) * float(q4)
     loaded_model.input['cuaca'] = (100 / 7) * float(q11)
     loaded_model.input['promosi'] = (100 / 7) * float(q12)
     loaded_model.compute()
     predicted_sales_loaded = loaded_model.output['penjualan']
 
-    # prediction = model.predict([data])
-    # if prediction == 1:
-    #   output='Sangat Tidak Puas'
-    # elif prediction == 2:
-    #   output='Tidak Puas'
-    # elif prediction == 3:
-    #   output='Agak Tidak Puas'
-    # elif prediction == 4:
-    #   output='Netral'
-    # elif prediction == 5:
-    #   output='Agak Puas'  
-    # elif prediction == 6:
-    #   output='Puas' 
-    # elif prediction == 7:
-    #   output='Sangat Puas'                  
-    # else:
-    #     output='Tidak Terprediksi'
-    #output = round(prediction[0], 2)
-    #tahun,jeniskelamin,fasilitas
-
     # Menampilkan output kategorikal dari model yang telah dimuat
-    print(predicted_sales_loaded)
     kategori_penjualan_loaded = None
 
-    if predicted_sales_loaded <= 35:
+    if predicted_sales_loaded <= 50:
         kategori_penjualan_loaded = "Rendah"
-    elif predicted_sales_loaded <= 75:
+    elif predicted_sales_loaded <= 70:
         kategori_penjualan_loaded = "Sedang"
     else:
         kategori_penjualan_loaded = "Tinggi"
