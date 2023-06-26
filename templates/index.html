@@ -1,303 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-            rel="stylesheet"
-        />
-        <title>PREDIKSI KEPUASAN PEMBELAJARAN JARAK JAUH DI PENDIDIKAN TINGGI SELAMA MASA PANDEMI COVID-19</title>
-    </head>
-    <body
-        class="h-100 d-flex flex-row justify-content-center align-items-center             
-            p-8
-            min-h-screen
-            bg-gradient-to-r
-            from-red-400
-            to-blue-500
-            text-gray-800
- "
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>
+      PREDIKSI PENJUALAN / SALES UMKM BISNIS MAKANAN BERDASARKAN HARGA, CUACA,
+      DAN PROMOSI
+    </title>
+  </head>
+  <body
+    class="h-100 d-flex flex-row justify-content-center align-items-center p-8 min-h-screen bg-gradient-to-r from-red-400 to-blue-500 text-gray-800"
+  >
+    <div
+      class="d-flex flex-column justify-around bg-white p-8 rounded-lg mt-8 text-2xl"
     >
-        <div class="d-flex flex-column justify-around bg-white p-16 rounded-lg mt-8">
-            <h3 class="badge bg-primary align-self-start flex-column text-3xl font-bold mb-8">
-	    PREDIKSI KEPUASAN PEMBELAJARAN JARAK JAUH DI PENDIDIKAN TINGGI SELAMA MASA PANDEMI COVID-19 </h3>
-	    
-            <h3 class="text-2xl font-bold mb-8"> Oleh : Kelompok 2 Kelas UG1 </h3>
-	    <h3 > 1. Fajar Astuti Hermawati</h3>
-            <h3 > 2. Enny Indasyah</h3>
-            <h3 > 3. Toni Wijanarko Adi Putra</h3>	
-	</div>
-	<div class="flex justify-around bg-white p-16 rounded-lg mt-8">
-	<h3 class="badge bg-primary align-self-start flex-fill text-2xl font-bold mb-8">
-	<form
-                action="{{ url_for('predict') }}"
-                method="post"
-                class="flex flex-col"
-            >
-		<h3>Silahkan masukkan data anda:</h3>
-		<label for="tahun" class="mt-4 mb-2"
-                    >Sekarang anda adalah mahasiswa tahun ke:</label
-                >
-			<select name= "tahun"
-				id="tahun"
-				class="p-4 bg-gray-100 rounded-md"
-			>
-			 <option value= "Tahun ke-1">Tahun ke-1</option>
-			 <option value= "Tahun ke-2">Tahun ke-2</option>
-			 <option value= "Tahun ke-3">Tahun ke-3</option>
-			  <option value= "Tahun ke-4 atau lebih">Tahun ke-4 atau lebih</option>
-			  </select>
-			  
-			<label for="jeniskelamin" class="mt-4 mb-2">Jenis Kelamin:</label>
-			<select name= "jeniskelamin"
-						id="jeniskelamin"
-						class="p-4 bg-gray-100 rounded-md"
-			>
-			 <option value= "Laki-laki">Laki-laki</option>
-			 <option value= "Perempuan">Perempuan</option>
-			   </select>
-			   
-			   <label for="fasilitas" class="mt-4 mb-2">Anda memiliki fasilitas pembelajaran berupa laptop dan wifi:</label>
-			<select name= "fasilitas"
-						id="fasilitas"
-						class="p-4 bg-gray-100 rounded-md"
-			>
-			 <option value= "ya">Ya</option>
-			 <option value= "tidak">Tidak</option>
-			   </select>
-                <label for="Q15" class="mt-4 mb-2"
-                    >Materi pembelajaran online (Zoom/Team/video) memudahkan pembelajaran saya:</label
-                >
-                <select
-                    name="Q15"
-                    id="Q15"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
+      <h3 class="badge bg-primary align-self-start flex-column font-bold mb-4">
+        PREDIKSI PENJUALAN / SALES UMKM BISNIS MAKANAN BERDASARKAN HARGA, CUACA,
+        DAN PROMOSI
+        <hr />
+      </h3>
 
-                <label for="Q12" class="mt-4 mb-2"
-                    >Saya selalu dapat fokus atau memperhatikan instruksi atau aktivitas jarak jauh:</label
-                >
-                <select
-                    name="Q12"
-                    id="Q12"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		             <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-                <label for="Q11" class="mt-4 mb-2"
-                    >Saya merasa bahwa pelajaran atau kegiatan kuliah saya telah disampaikan dengan baik di lingkungan online:</label
-                >
-                <select
-                    name="Q11"
-                    id="Q11"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-                <label for="Q16" class="mt-4 mb-2"
-                    >Metode penilaian yang disesuaikan/dimodifikasi dalam masa transisi ini sesuai untuk mengevaluasi pencapaian hasil belajar yang saya maksudkan:</label
-                >
-                <select
-                    name="Q16"
-                    id="Q16"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q7" class="mt-4 mb-2"
-                    >Saya selalu dapat menemukan waktu untuk berpartisipasi dalam kelas sinkron(mis., kuliah streaming langsung atau konferensi video pada waktu yang ditentukan):</label
-                >
-                <select
-                    name="Q7"
-                    id="Q7"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q20" class="mt-4 mb-2"
-                    >Selama masa transisi program ini, saran dan komentar mahasiswa didengarkan dan ditindaklanjuti dengan tepat:</label
-                >
-                <select
-                    name="Q20"
-                    id="Q20"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q18" class="mt-4 mb-2"
-                    >Penilaian yang disesuaikan /dimodifikasi efektif dalam membantu saya belajar:</label
-                >
-                <select
-                    name="Q18"
-                    id="Q18"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q9" class="mt-4 mb-2"
-                    >Saya selalu dapat menemukan waktu untuk pertemuan dan jadwal kelas:</label
-                >
-                <select
-                    name="Q9"
-                    id="Q9"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q10" class="mt-4 mb-2"
-                    >Saya lebih suka belajar tatap muka :</label
-                >
-                <select
-                    name="Q10"
-                    id="Q10"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-		<label for="Q13" class="mt-4 mb-2"
-                    >Secara umum, dosen saya tersedia atau responsif:</label
-                >
-                <select
-                    name="Q13"
-                    id="Q13"
-                    class="p-4 bg-gray-100 rounded-md"
-                >
-                    <option value="1">Sangat Tidak Setuju</option>
-                    <option value="2">Tidak Setuju</option>
-		            <option value="3">Agak Tidak Setuju</option>
-                    <option value="4">Netral</option>
-		            <option value="5">Agak Setuju</option>
-                    <option value="6">Setuju</option>
-		            <option value="7">Sangat Setuju</option>
-                </select>
-                <button
-                    type="submit"
-                    class="
-                        flex
-                        justify-center
-                        align-center
-                        mt-8
-                        p-4
-                        bg-gradient-to-r
-                        from-blue-400
-                        to-red-500
-                        text-white
-                        rounded-md
-                    "
-                >
-                    PREDIKSI SEKARANG
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-arrow-right ml-4"
-                    >
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
-            </form></h3>
+      <div class="text-base font-bold mb-4">
+        <h3>Oleh :</h3>
+        <h3>1. Muhammad Ferianto (1462100035)</h3>
+        <h3>2. Tegar Bangun Suganda (1462100043)</h3>
+        <h3>3. Muhammad Santriko (1462100192)</h3>
+      </div>
+
+      <div class="text-base font-bold mb-4">
+        <h3>Mata Kuliah :</h3>
+        <h3>Kecerdasan Komputasional (R)</h3>
+      </div>
+
+      <div class="text-base font-bold">
+        <h3>Dosen Pengampu :</h3>
+        <h3>Andrey Kartika Widhy Hapantenda, S.Kom., M.Kom.</h3>
+      </div>
+    </div>
+
+    <div
+      class="flex w-full bg-white p-8 rounded-lg mt-8 badge bg-primary align-self-start flex-fill text-2xl font-bold mb-8"
+    >
+      <form action="{{ url_for('predict') }}" method="post" class="w-full">
+        <h3>Silahkan masukkan data UMKM anda :</h3>
+        <hr />
+        <div class="mb-10 mt-4">
+          <label
+            for="d1"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >1. Bagaimana menurut Anda harga rata-rata produk makanan pada UMKM
+            Anda?</label
+          >
+          <select
+            id="d1"
+            name="d1"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="Murah">Murah</option>
+            <option value="Sedang">Sedang</option>
+            <option selected value="Mahal">Mahal</option>
+          </select>
         </div>
-        
-        <div class="d-flex flex-column justify-around bg-white p-16 rounded-lg mt-8">
-            <h3 class="badge bg-primary align-self-start flex-column text-3xl font-bold mb-8">
-	    Estimasi tingkat kepuasan Anda dalam pembelajaran jarak jauh adalah : </h3>
-            <h2 class="text-5xl font-bold"> {{ output }}</h2>    
-           
-                <h3 class="mt-8">Dimana diketahui anda adalah : 
-                    <p>Mahasiswa : {{ tahun }}</p>
-                    <p>Jenis kelamin: {{ jeniskelamin }}</p>
-                    <p>Anda memiliki laptop (sarana pembelajaran lainnya): {{ fasilitas }}</p>
-                </h3>
-                <h3 class="mt-8">Dengan pengisian quisioner anda sebagai berikut : 
-                    <p>Materi pembelajaran online (Zoom/Team/video) memudahkan pembelajaran saya: {{ Q15 }}</p>
-                    <p>Saya selalu dapat fokus atau memperhatikan instruksi atau aktivitas jarak jauh: {{ Q12 }}</p>
-                    <p>Saya merasa bahwa pelajaran atau kegiatan kuliah saya telah disampaikan dengan baik di lingkungan online: {{ Q11 }}</p>
-                    <p>Metode penilaian yang disesuaikan/dimodifikasi dalam masa transisi ini sesuai untuk mengevaluasi pencapaian hasil belajar yang saya maksudkan: {{ Q16 }}</p>
-                    <p>Saya selalu dapat menemukan waktu untuk berpartisipasi dalam kelas sinkron(mis., kuliah streaming langsung atau konferensi video pada waktu yang ditentukan): {{ Q7 }}</p>
-                    <p>Selama masa transisi program ini, saran dan komentar mahasiswa didengarkan dan ditindaklanjuti dengan tepat: {{ Q20 }}</p>
-                    <p>Penilaian yang disesuaikan /dimodifikasi efektif dalam membantu saya belajar: {{ Q18 }}</p>
-                    <p>Saya selalu dapat menemukan waktu untuk pertemuan dan jadwal kelas: {{ Q9 }}</p>
-                    <p>Saya lebih suka belajar tatap muka: {{ Q10 }}</p>
-                    <p>Secara umum, dosen saya tersedia atau responsif: {{ Q13 }}</p>
+        <div class="mb-10 mt-4">
+          <label
+            for="d2"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >2. Berapa karyawan Anda di bisnis UMKM Anda?</label
+          >
+          <select
+            id="d2"
+            name="d2"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option selected value="Sedikit">Sedikit</option>
+            <option value="Cukup">Cukup</option>
+            <option value="Banyak">Banyak</option>
+          </select>
+        </div>
+        <div class="mb-10 mt-4">
+          <label
+            for="d3"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >3. Bagaimana menurut Anda mengenai banyak pelanggan pada bisnis
+            UMKM Anda?</label
+          >
+          <select
+            id="d3"
+            name="d3"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option selected value="Sedikit">Sedikit</option>
+            <option value="Cukup">Cukup</option>
+            <option value="Banyak">Banyak</option>
+          </select>
+        </div>
 
-                </h3>               
-	</div>
-            <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
-                <img
-                    class="h-24 md:h-28"
-                    src="https://digitalent.kominfo.go.id/assets/@images/logo.png"
-                    alt="logo-dts"
-                />
-                <img
-                    class="h-24 md:h-28"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg/604px-Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg.png"
-                    alt="logo-kominfo"
-                />
-            </div>
-    </body>
+        <div class="mb-10 mt-4">
+          <label
+            for="d4"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >4. Berapa lama UMKM Anda beroperasi?</label
+          >
+          <select
+            id="d4"
+            name="d4"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option selected value="< 1 Tahun">&lt; 1 Tahun</option>
+            <option value="1 Tahun">1 Tahun</option>
+            <option value="2 Tahun">2 Tahun</option>
+            <option value="3 Tahun">3 Tahun</option>
+            <option value="> 4 Tahun">&gt; 4 Tahun</option>
+          </select>
+        </div>
+
+        <div class="mb-10 mt-4">
+          <label
+            for="d5"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >5. Apakah UMKM Anda memasarkan produk secara digital?</label
+          >
+          <select
+            id="d5"
+            name="d5"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option selected value="Tidak">Tidak</option>
+            <option value="Ya">Ya</option>
+          </select>
+        </div>
+        <br />
+        <h3>Silahkan isi quisioner di bawah :</h3>
+        <hr />
+        <div class="mb-10 mt-4">
+          <label
+            for="q3"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >1. Seberapa puas Anda dengan harga produk pesaing di pasar?</label
+          >
+          <select
+            id="q3"
+            name="q3"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="1">Sangat Tidak Puas</option>
+            <option value="2">Tidak Puas</option>
+            <option value="3">Agak Tidak Puas</option>
+            <option selected value="4">Netral</option>
+            <option value="5">Agak Puas</option>
+            <option value="6">Puas</option>
+            <option value="7">Sangat Puas</option>
+          </select>
+        </div>
+        <div class="mb-10 mt-4">
+          <label
+            for="q4"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >2. Seberapa besar pengaruh harga produk Anda terhadap penjualan
+            Anda?</label
+          >
+          <select
+            id="q4"
+            name="q4"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="1">Sangat Tidak Puas</option>
+            <option value="2">Tidak Puas</option>
+            <option value="3">Agak Tidak Puas</option>
+            <option selected value="4">Netral</option>
+            <option value="5">Agak Puas</option>
+            <option value="6">Puas</option>
+            <option value="7">Sangat Puas</option>
+          </select>
+        </div>
+
+        <div class="mb-10 mt-4">
+          <label
+            for="q10"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >3. Seberapa puas Anda dengan pengaruh cuaca terhadap penjualan
+            Anda?</label
+          >
+          <select
+            id="q10"
+            name="q10"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="1">Sangat Tidak Puas</option>
+            <option value="2">Tidak Puas</option>
+            <option value="3">Agak Tidak Puas</option>
+            <option selected value="4">Netral</option>
+            <option value="5">Agak Puas</option>
+            <option value="6">Puas</option>
+            <option value="7">Sangat Puas</option>
+          </select>
+        </div>
+
+        <div class="mb-10 mt-4">
+          <label
+            for="q11"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >4. Seberapa besar pengaruh cuaca terhadap penjualan Anda?</label
+          >
+          <select
+            id="q11"
+            name="q11"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="1">Sangat Tidak Puas</option>
+            <option value="2">Tidak Puas</option>
+            <option value="3">Agak Tidak Puas</option>
+            <option selected value="4">Netral</option>
+            <option value="5">Agak Puas</option>
+            <option value="6">Puas</option>
+            <option value="7">Sangat Puas</option>
+          </select>
+        </div>
+
+        <div class="mb-10 mt-4">
+          <label
+            for="q12"
+            class="block mb-2 text-base font-bold text-gray-900 dark:text-white"
+            >5. Seberapa puas Anda dengan efektivitas promosi yang Anda
+            lakukan?</label
+          >
+          <select
+            id="q12"
+            name="q12"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="1">Sangat Tidak Puas</option>
+            <option value="2">Tidak Puas</option>
+            <option value="3">Agak Tidak Puas</option>
+            <option selected value="4">Netral</option>
+            <option value="5">Agak Puas</option>
+            <option value="6">Puas</option>
+            <option value="7">Sangat Puas</option>
+          </select>
+        </div>
+
+        <hr />
+        <!-- <div class="mb-10 mt-4">
+          <div class="text-lg">
+            <label for="harga" class="mt-4 mb-4">Masukkan Nilai Harga:</label>
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Rendah</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Sedang</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Tinggi</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="harga"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <div class="text-lg">
+            <label for="cuaca" class="mt-4 mb-4">Masukkan Nilai Cuaca:</label>
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Buruk</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Normal</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Baik</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="cuaca"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-lg">
+            <label for="promosi" class="mt-4 mb-4"
+              >Masukkan Nilai Promosi:</label
+            >
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Rendah</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Sedang</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Tinggi</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="promosi"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div> -->
+
+        <button
+          type="submit"
+          class="flex justify-center text-md align-center mt-8 p-2 bg-gradient-to-r from-blue-600 to-aqua-400 text-white rounded-md"
+        >
+          <span class="text-lg">Prediksi</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="d-flex flex-column justify-around bg-white p-8 rounded-lg mt-8">
+      <h3
+        class="badge bg-primary align-self-start flex-column text-3xl font-bold mb-8"
+      >
+        Estimasi tingkat penjualan produk UMKM Anda adalah :
+      </h3>
+      <h2 class="text-5xl font-bold">{{ output }}</h2>
+
+      <h3 class="mt-8">
+        <p class="block mb-2 text-base font-bold text-gray-900 dark:text-white">
+          Dimana diketahui data UMKM yang anda masukkan adalah :
+        </p>
+        <table>
+          <tr>
+            <td>1. Harga</td>
+            <td class="px-2">:</td>
+            <td>{{d1}}</td>
+          </tr>
+          <tr>
+            <td>2. Karyawan</td>
+            <td class="px-2">:</td>
+            <td>{{d2}}</td>
+          </tr>
+          <tr>
+            <td>3. Pelanggan</td>
+            <td class="px-2">:</td>
+            <td>{{d3}}</td>
+          </tr>
+          <tr>
+            <td>4. Lama Beroperasi</td>
+            <td class="px-2">:</td>
+            <td>{{d4}}</td>
+          </tr>
+          <tr>
+            <td>5. Digitalisasi</td>
+            <td class="px-2">:</td>
+            <td>{{d5}}</td>
+          </tr>
+        </table>
+      </h3>
+      <h3 class="mt-8">
+        <p class="block mb-2 text-base font-bold text-gray-900 dark:text-white">
+          Dengan pengisian quisioner anda sebagai berikut :
+        </p>
+        <table>
+          <tr>
+            <td>Seberapa puas Anda dengan harga produk pesaing di pasar?</td>
+            <td class="px-2">:</td>
+            <td>{{q3}}</td>
+          </tr>
+          <tr>
+            <td>
+              Seberapa besar pengaruh harga produk Anda terhadap penjualan Anda?
+            </td>
+            <td class="px-2">:</td>
+            <td>{{q4}}</td>
+          </tr>
+          <tr>
+            <td>
+              Seberapa puas Anda dengan pengaruh cuaca terhadap penjualan Anda?
+            </td>
+            <td class="px-2">:</td>
+            <td>{{q10}}</td>
+          </tr>
+          <tr>
+            <td>Seberapa besar pengaruh cuaca terhadap penjualan Anda?</td>
+            <td class="px-2">:</td>
+            <td>{{q11}}</td>
+          </tr>
+          <tr>
+            <td>
+              Seberapa puas Anda dengan efektivitas promosi yang Anda lakukan?
+            </td>
+            <td class="px-2">:</td>
+            <td>{{q12}}</td>
+          </tr>
+        </table>
+      </h3>
+    </div>
+    <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
+      <img
+        class="h-24 md:h-28"
+        src="data:image/png;base64,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"
+        alt="logo-dts"
+      />
+      <img
+        class="h-24 md:h-28"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg/604px-Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg.png"
+        alt="logo-kominfo"
+      />
+    </div>
+  </body>
 </html>

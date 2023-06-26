@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>
+      PREDIKSI PENJUALAN PRODUK X BERDASARKAN HARGA, CUACA, DAN PROMOSI
+    </title>
+  </head>
+  <body
+    class="h-100 d-flex flex-row justify-content-center align-items-center p-8 min-h-screen bg-gradient-to-r from-red-400 to-blue-500 text-gray-800"
+  >
+    <div
+      class="d-flex flex-column justify-around bg-white p-8 rounded-lg mt-8 text-2xl"
+    >
+      <h3 class="badge bg-primary align-self-start flex-column font-bold mb-4">
+        PREDIKSI PENJUALAN PRODUK X BERDASARKAN HARGA, CUACA, DAN PROMOSI
+        <hr />
+      </h3>
+
+      <div class="text-base font-bold mb-4">
+        <h3>Oleh :</h3>
+        <h3>1. Muhammad Ferianto (1462100035)</h3>
+        <h3>2. Tegar Bangun Suganda (1462100043)</h3>
+        <h3>3. Muhammad Santriko (1462100192)</h3>
+      </div>
+
+      <div class="text-base font-bold mb-4">
+        <h3>Mata Kuliah :</h3>
+        <h3>Kecerdasan Komputasional (R)</h3>
+      </div>
+
+      <div class="text-base font-bold">
+        <h3>Dosen Pengampu :</h3>
+        <h3>Andrey Kartika Widhy Hapantenda, S.Kom., M.Kom.</h3>
+      </div>
+    </div>
+
+    <div
+      class="flex w-full bg-white p-8 rounded-lg mt-8 badge bg-primary align-self-start flex-fill text-2xl font-bold mb-8"
+    >
+      <form action="{{ url_for('predict') }}" method="post" class="w-full">
+        <h3>Silahkan masukkan data anda:</h3>
+        <hr />
+        <div class="mb-10 mt-4">
+          <div class="text-lg">
+            <label for="harga" class="mt-4 mb-4">Masukkan Nilai Harga:</label>
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Rendah</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Sedang</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Tinggi</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="harga"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <div class="text-lg">
+            <label for="cuaca" class="mt-4 mb-4">Masukkan Nilai Cuaca:</label>
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Buruk</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Normal</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Baik</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="cuaca"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-lg">
+            <label for="promosi" class="mt-4 mb-4"
+              >Masukkan Nilai Promosi:</label
+            >
+            <table class="text-sm text-start w-1/6">
+              <tr>
+                <td>0~</td>
+                <td>:</td>
+                <td>Rendah</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>:</td>
+                <td>Sedang</td>
+              </tr>
+              <tr>
+                <td>~100</td>
+                <td>:</td>
+                <td>Tinggi</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w-full">
+            <input
+              type="range"
+              list="tickmarks"
+              value="50"
+              min="0"
+              max="100"
+              class="w-full"
+              name="promosi"
+            />
+            <datalist id="tickmarks">
+              <option value="0"></option>
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="30"></option>
+              <option value="40"></option>
+              <option value="50"></option>
+              <option value="60"></option>
+              <option value="70"></option>
+              <option value="80"></option>
+              <option value="90"></option>
+              <option value="100"></option>
+            </datalist>
+          </div>
+
+          <div class="flex justify-between">
+            <p>0</p>
+            <p class="ml-8">50</p>
+            <p>100</p>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="flex justify-center text-md align-center mt-8 p-2 bg-gradient-to-r from-blue-600 to-aqua-400 text-white rounded-md"
+        >
+          <span class="text-lg">Prediksi</span>
+          <!-- <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-arrow-right ml-4"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span> -->
+        </button>
+      </form>
+    </div>
+
+    <div class="d-flex flex-column justify-around bg-white p-8 rounded-lg mt-8">
+      <h3
+        class="badge bg-primary align-self-start flex-column text-3xl font-bold mb-8"
+      >
+        Estimasi tingkat penjualan / sales produk X adalah :
+      </h3>
+      <h2 class="text-5xl font-bold">{{ output }}</h2>
+
+      <h3 class="mt-8">
+        Dimana diketahui nilai yang anda masukkan adalah :
+        <p>Nilai Harga : {{ harga }}</p>
+        <p>Nilai Cuaca : {{ cuaca }}</p>
+        <p>Nilai Promosi : {{ promosi }}</p>
+      </h3>
+      <!-- <h3 class="mt-8">
+        Dengan pengisian quisioner anda sebagai berikut :
+        <p>
+          Materi pembelajaran online (Zoom/Team/video) memudahkan pembelajaran
+          saya: {{ Q15 }}
+        </p>
+        <p>
+          Saya selalu dapat fokus atau memperhatikan instruksi atau aktivitas
+          jarak jauh: {{ Q12 }}
+        </p>
+        <p>
+          Saya merasa bahwa pelajaran atau kegiatan kuliah saya telah
+          disampaikan dengan baik di lingkungan online: {{ Q11 }}
+        </p>
+        <p>
+          Metode penilaian yang disesuaikan/dimodifikasi dalam masa transisi ini
+          sesuai untuk mengevaluasi pencapaian hasil belajar yang saya
+          maksudkan: {{ Q16 }}
+        </p>
+        <p>
+          Saya selalu dapat menemukan waktu untuk berpartisipasi dalam kelas
+          sinkron(mis., kuliah streaming langsung atau konferensi video pada
+          waktu yang ditentukan): {{ Q7 }}
+        </p>
+        <p>
+          Selama masa transisi program ini, saran dan komentar mahasiswa
+          didengarkan dan ditindaklanjuti dengan tepat: {{ Q20 }}
+        </p>
+        <p>
+          Penilaian yang disesuaikan /dimodifikasi efektif dalam membantu saya
+          belajar: {{ Q18 }}
+        </p>
+        <p>
+          Saya selalu dapat menemukan waktu untuk pertemuan dan jadwal kelas: {{
+          Q9 }}
+        </p>
+        <p>Saya lebih suka belajar tatap muka: {{ Q10 }}</p>
+        <p>Secara umum, dosen saya tersedia atau responsif: {{ Q13 }}</p>
+      </h3> -->
+    </div>
+    <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
+      <img
+        class="h-24 md:h-28"
+        src="https://digitalent.kominfo.go.id/assets/@images/logo.png"
+        alt="logo-dts"
+      />
+      <img
+        class="h-24 md:h-28"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg/604px-Logo_of_Ministry_of_Communication_and_Information_Technology_of_the_Republic_of_Indonesia.svg.png"
+        alt="logo-kominfo"
+      />
+    </div>
+  </body>
+</html>
